@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            加工が完了しました
+        </title>
+    </head>
+    <body>
+        <h1>
+            加工が完了しました
+        </h1>
+        <form method = post enctype = multipart/form-data>
+            <p>
+                <b>Zoom画像</b>
+            </p>
+            <img src="{{ url_for('input_file') }}" alt="zoom" title="zoom">
+            <p>
+                <b>集合写真</b>
+            </p>
+            <img src="{{ url_for('output_file') }}" alt="group" title="group">
+        </form>
+    </body>
+</html>
