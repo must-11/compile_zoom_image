@@ -37,34 +37,9 @@ def upload_file():
             body_path = "data/body.png"
             background_path = os.path.join(app.config["UPLOAD_FOLDER"], filename2)
         run(args)
-        app.config["INPUT_FILE"] = args.file_path
-        app.config["OUTPUT_FILE"] = args.out_path
-        return redirect(url_for("uploaded_file"))
+        return send_file(args.out_path)
     if request.method == "GET":
         return render_template("home.html")
-
-
-@app.route("/uploads")
-def uploaded_file():
-    return render_template("end.html")
-
-
-@app.route('/inputfile')
-def input_file():
-    try:
-        filename = app.config["INPUT_FILE"]
-        return send_file(filename)
-    except FileNotFoundError:
-        abort(404)
-
-
-@app.route('/outputfile')
-def output_file():
-    try:
-        filename = app.config["OUTPUT_FILE"]
-        return send_file(filename)
-    except FileNotFoundError:
-        abort(404)
 
 
 if __name__ == "__main__":
