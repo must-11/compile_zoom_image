@@ -8,4 +8,5 @@ poetry install
 poetry shell
 python main.py
 ```
-実行したらhttp://127.0.0.1:8888/にアクセスしてください
+実行したら http://127.0.0.1:8888/ にアクセスしてください
+その後はUIの指示に従ってください。
